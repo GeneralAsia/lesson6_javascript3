@@ -1,8 +1,8 @@
 
 /*    
     Program Name:  Photo Gallery Application
-    Author: 
-    Date:   
+    Author: Maxwell Schwartz
+    Date: 11/20/2018  
     Filename: photos.js
     
  */
@@ -18,11 +18,23 @@ var figureCount = 3;
 /* This method adds src values to img elements based on order specified in photoOrder array             */
 /********************************************************************************************************/
 function populateFigures() {
+    var filename;
+    var currentFig;
+    if (figureCount === 3){
+        for (var i = 1; i < 4; i++) {
+        filename = "images/IMG_0" + photoOrder[i] + "sm.jpg";
+        currentFig = document.getElementsByTagName("img")[i-1];
+        currentFig.src = filename;
+    }//end of loop
+} else {
+        for (var i = 0; i < 5; i++){
+            filename = "images/IMG_0" + photoOrder[i] + "sm.jpg";
+            currentFig = document.getElementsByTagName("img")[i];
+            currentFig.src = filename;
+        }//end of for loop
+    }//End of else
+}//end of populateFigures()
 
-
-
-
-}//end of populateFigures function
 
 /**********************************END OF populateFigures() FUNCTION*************************************/
 
@@ -70,7 +82,41 @@ function leftArrow() {
 /******************************************************************************************************/
 function previewFive() {
    
-
+   var articleEl = document.getElementsByTagName("article")[0];
+   
+   var lastFigure = document.createElement("figure");
+   
+   lastFigure.id = "fig5";
+   lastFigure.style.zIndex = "5";
+   lastFigure.style.position = "absolute";
+   lastFigure.style.right = "45px";
+   lastFigure.style.top = "67px";
+   
+   var lastImage = document.createElement("img");
+   lastImage.width = "240";
+   lastImage.height = "135";
+   
+   lastFigure.appendChild(lastImage);
+   
+   articleEl.appendChild(lastFigure);
+   
+   var firstFigure = lastFigure.cloneNode(true);
+   
+   firstFigure.id = "fig1";
+   firstFigure.style.right = "";
+   firstFigure.style.left = "45px";
+   
+   articleEl.insertBefore(firstFigure, document.getElementById("fig2"));
+   
+   document.getElementsByTagName("img")[0].src = "images/IMG_0" + photoOrder[0] + "sm.jpg";
+   document.getElementsByTagName("img")[4].src = "images/IMG_0" + photoOrder[4] + "sm.jpg";
+   
+   figureCount = 5;
+   
+   //This disables the show more button after activated
+   var numberButton = document.querySelector("#fiveButton p");
+   
+   numberButton.removeEventListener("click", previewFive, false);
    
    
 }//end of previewFive()
@@ -83,9 +129,17 @@ function previewFive() {
 /*         This method attaches event listeners to the buttons (left, right, and show all).            */
 /*******************************************************************************************************/
 function createEventListeners() {
+  
+   var leftarrow = document.getElementById("leftarrow");
+   leftarrow.addEventListener("click", leftArrow, false);
    
+    
+    var rightarrow = document.getElementById("rightarrow");
+    rightarrow.addEventListener("click", rightArrow, false);
 
-
+    var showAllButton = document.querySelector("#fiveButton p");
+    
+    showAllButton.addEventListener("click", previewFive, false);
    
 }//end of createEventListeners function
 

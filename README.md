@@ -4,20 +4,19 @@
 Web Application Development
 
 ### Assignment Date:  
-(Month Day, Year)
+(November, 20, 2018)
 
 ### Student Name:  
-(First and Last Name)
+(Maxwell Schwartz)
 
 ### Project Description:
-(In your own words, briefly describe the assignment.)
+(We are tasked with editing the site so that it dispalys a rotating picture display.)
 
 ### View Project:
-(Replace this statement with your Github Page URL that was created when you 
- published the project.)
+https://generalasia.github.io/lesson6_javascript3/
 
 ### Lessons Learned in the Assignment:
-1. (Briefly describe a lesson/concept learned in this lesson.)
-2. (Briefly describe a lesson/concept learned in this lesson.)
-3. (Briefly describe a lesson/concept learned in this lesson.)
+1. I learned how to use event handlers better.
+2. How to incorperate photos into my websites.
+3. More ways to use if else statements in javascript.
 
