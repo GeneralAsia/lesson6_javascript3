@@ -11,7 +11,7 @@
 "use strict"; // interpret document contents in JavaScript strict mode
 
 /* global variables */
-var photoOrder = [1,2,3,4,5];
+var photoOrder = [1,2,3,4,5]; //Order of photos
 var figureCount = 3;
 
 /*****************************************populateFigures() FUNCTION*************************************/
@@ -20,6 +20,7 @@ var figureCount = 3;
 function populateFigures() {
     var filename;
     var currentFig;
+    
     if (figureCount === 3){
         for (var i = 1; i < 4; i++) {
         filename = "images/IMG_0" + photoOrder[i] + "sm.jpg";
